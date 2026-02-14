@@ -1,6 +1,6 @@
 INCEPTION PHASE: The inception phase is the foundational task in the development of a software solution that focuses on defining the problem space clearly. It includes scope, problem statement, business case, high-level requirements and feasibility of a project. 
 
-PROPOSED STRUCTURE
+PROPOSED STRUCTURE 
 
 01_Project_Context: Merged introduction and business context, These are often very short. Combining them into a single 1_Project_Context.md creates a stronger opening that covers both the "Who" and the "Where."
 
