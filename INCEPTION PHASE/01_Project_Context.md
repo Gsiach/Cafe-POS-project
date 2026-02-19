@@ -19,8 +19,11 @@ This operational, competitive, and technological environment defines the busines
   <li>The Cafe operates from a single physical location.</li>
   <li>The system will run on standard Desktop or Laptop computers.</li>
   <li>Internet connectivity may be limited; therefore, the system should function offline if necessary.</li>
-  <li>Staff members have basic computer literacy.</li>
   <li>The initial implementation will focus on core POS functionality.</li>
+  <li><u>Scalability Considerations:</u> The system is assumed to be scalable for small single-location cafes; multi-location or chain management is considered out oof scope for this phase.</li>
+  <li><u>Regulatory Compliance:</u> The Cafe will comply with local health, safety, and financial regulations. The POS system will support compliance tracking, but it assumes the business follows legal and regulatory requirements.</li>
+  <li><u>Staff Training:</u> It is assumed that the cafe staff will receive adequate training to efficiently use the POS system. Staff will have basic computer literacy and willingness to adapt digital workflow.</li>
+  
 </ul>
 
 
@@ -35,6 +38,53 @@ Key stake holders involved in this project include the following:
 </ul>
 
 
+<h2>6. POS System Architecture Basics</h2>
+<p><i>At inception, only a high-level architectural view is required.</i></p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <tr>
+    <th>Component</th>
+    <th>Primary Function</th>
+    <th>Key Data Handled</th>
+    <th>Interacts With</th>
+  </tr>
+
+  <tr>
+    <td>User Interface (UI)</td>
+    <td>Provides screens for order entry, payments, and reports</td>
+    <td>Customer orders, payment inputs</td>
+    <td>Order Processing Module</td>
+  </tr>
+
+  <tr>
+    <td>Order Processing Module</td>
+    <td>Processes orders and manages transactions</td>
+    <td>Order details, payment status</td>
+    <td>UI, Database, Inventory Module</td>
+  </tr>
+
+  <tr>
+    <td>Inventory Module</td>
+    <td>Tracks stock levels and updates inventory</td>
+    <td>Stock quantities, item availability</td>
+    <td>Order Processing Module, Database</td>
+  </tr>
+
+  <tr>
+    <td>Database</td>
+    <td>Stores system data persistently</td>
+    <td>Orders, menu items, inventory records, reports</td>
+    <td>All Modules</td>
+  </tr>
+
+  <tr>
+    <td>Reporting Module</td>
+    <td>Generates sales and performance reports</td>
+    <td>Sales data, transaction history</td>
+    <td>Database, UI</td>
+  </tr>
+
+</table>
 
 
 
