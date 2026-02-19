@@ -13,7 +13,7 @@ Objectives:
   <li>Create initial system architecture design.</li>
   <li>Develop use case diagrams and system models.</li>
 </ul>
-<Deliverables:
+Deliverables:
 <ul>
   <li>Vision & Scope Document</li>
   <li>Use Case Diagram</li>
