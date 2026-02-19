@@ -15,11 +15,13 @@ This operational, competitive, and technological environment defines the busines
 
 
 <h2>ASSUMPTIONS</h2>
-- The Cafe operates from a single physical location.
-- The system will run on standard Desktop or Laptop computers.
-- Internet connectivity may be limited; therefore, the system should function offline if necessary.
-- Staff members have basic computer literacy.
-- The initial implementation will focus on core POS functionality.
+<ul>
+  <li>The Cafe operates from a single physical location.</li>
+  <li>The system will run on standard Desktop or Laptop computers.</li>
+  <li>Internet connectivity may be limited; therefore, the system should function offline if necessary.</li>
+  <li>Staff members have basic computer literacy.</li>
+  <li>The initial implementation will focus on core POS functionality.</li>
+</ul>
 
 
 
