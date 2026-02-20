@@ -49,6 +49,18 @@ We **recommend implementing a modern digital POS system** as it addresses financ
 
 **Financial KPI:** Expected **15–20% reduction in revenue leakage** within the first year.
 
+### ROI Calculation 
+
+**Estimated Investment:** $2,000 (POS system + setup + training)  
+**Expected Annual Savings:** $3,000 (Revenue leakage + staff time + spoilage reduction)  
+
+**ROI (%)** = (Savings − Investment) ÷ Investment × 100  
+**ROI (%)** = (3000 − 2000) ÷ 2000 × 100 = **50%**
+
+Meaning: Every $1 invested in the POS system returns $1.50 in value annually.
+
+*Note:* Figures shown are **illustrative estimates** for a small café in Zambia. Actual numbers depend on transaction volume, staff, and inventory, but the **percentage improvements are realistic and aligned with trends observed in SMEs across Zambia and Southern Africa**.
+
 ### Risk Assessment
 
 | Risk | Impact | Mitigation |
