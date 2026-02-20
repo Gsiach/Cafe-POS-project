@@ -122,3 +122,67 @@ In the inception phase, high-level use cases are presented without excessive det
 2. Selects report type.
 3. Selects date range.
 4. System
+
+# Non-Functional Requirements
+Cafe Restaurant Point of Sale (POS) System
+
+Non-functional requirements define the quality attributes, constraints, and operational standards that the system must satisfy.
+
+---
+
+## 1. Performance Requirements
+
+- NFR1: The system shall process a sales transaction within 2 seconds under normal operating conditions.
+- NFR2: The system shall support a minimum of 5 concurrent users without performance degradation.
+- NFR3: The system shall generate reports within 5 seconds for daily summaries.
+- NFR4: The system shall operate continuously during business hours without system failure.
+
+---
+
+## 2. Security Requirements
+
+- NFR5: The system shall require user authentication before granting access.
+- NFR6: The system shall implement role-based access control (RBAC).
+- NFR7: The system shall encrypt sensitive payment data.
+- NFR8: The system shall maintain an audit log of all transactions and user activities.
+- NFR9: The system shall automatically log out inactive users after a defined timeout period.
+
+---
+
+## 3. Usability Requirements
+
+- NFR10: The system interface shall be user-friendly and easy to navigate.
+- NFR11: The system shall support touch-screen POS devices.
+- NFR12: The system shall require no more than 2 hours of training for new users.
+- NFR13: The system shall provide clear error messages and user guidance.
+
+---
+
+## 4. Reliability Requirements
+
+- NFR14: The system shall achieve at least 99% uptime during operational hours.
+- NFR15: The system shall automatically back up data daily.
+- NFR16: The system shall allow recovery of data in case of system failure.
+
+---
+
+## 5. Scalability Requirements
+
+- NFR17: The system shall support future expansion to multiple branches.
+- NFR18: The system shall allow addition of new users and menu items without affecting performance.
+
+---
+
+## 6. Compatibility and Hardware Constraints
+
+- NFR19: The system shall operate on Windows-based POS terminals.
+- NFR20: The system shall support integration with receipt printers.
+- NFR21: The system shall integrate with card payment terminals and mobile money systems.
+
+---
+
+## 7. Maintainability Requirements
+
+- NFR22: The system shall be modular to allow future updates and enhancements.
+- NFR23: The system shall provide system error logs for debugging and maintenance.
+- NFR24: The system shall allow software updates without loss of existing data.
