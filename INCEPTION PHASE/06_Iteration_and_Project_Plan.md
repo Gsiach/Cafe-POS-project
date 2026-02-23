@@ -1,6 +1,6 @@
-<h1 align = "center">Project Plan – Cafe Small Restaurant POS System</h1>
+<h2>Project Plan – Cafe Small Restaurant POS System</h2>
 
-<h2>1. Development Approach</h2>
+<h3>1. Development Approach</h3>
 <p>
 The project will follow the <strong>Unified Process (UP)</strong> lifecycle, consisting of four main phases:
 </p>
@@ -46,13 +46,10 @@ Development will be iterative, with incremental refinement of requirements, desi
       </td>
       <td>
         <ul>
-          <li>Use-Case Model</li>
-          <li>Supplementary Specification</li>
-          <li>Glossary</li>
-          <li>Risk List & Risk Management Plan</li>
-          <li>Iteration Plan</li>
-          <li>Phase Plan & Software Development Plan</li>
-          <li>Development Case</li>
+          <li>Inception documentation</li>
+          <li>High-level use case diagram</li>
+          <li>Risk analysis</li>
+          <li>Business case</li>
         </ul>
       </td>
     </tr>
@@ -122,7 +119,7 @@ Development will be iterative, with incremental refinement of requirements, desi
 
 <hr>
 
-<h2>3. Timeline Overview </h2>
+<h3>3. Timeline Overview (Example Academic Schedule)</h3>
 
 <table border="1" cellpadding="8" cellspacing="0">
   <thead>
