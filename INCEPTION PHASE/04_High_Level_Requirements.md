@@ -178,7 +178,7 @@ Non-functional requirements define the quality attributes, constraints, and oper
 ## 3. Usability Requirements
 
 - NFR10: The system interface shall be user-friendly and easy to navigate.
-- NFR11: The system shall support touch-screen POS devices.
+- NFR11: The system interface shall be touch-friendly and operable via both mouse and touchscreen input on standard desktop or laptop computers.
 - NFR12: The system shall require no more than 2 hours of training for new users.
 - NFR13: The system shall provide clear error messages and user guidance.
 
@@ -201,7 +201,7 @@ Non-functional requirements define the quality attributes, constraints, and oper
 
 ## 6. Compatibility and Hardware Constraints
 
-- NFR19: The system shall operate on Windows-based POS terminals.
+- NFR19: The system shall operate on standard Windows-based desktop or laptop computers.
 - NFR20: The system shall support integration with receipt printers.
 - NFR21: The system shall integrate with card payment terminals and mobile money systems.
 
