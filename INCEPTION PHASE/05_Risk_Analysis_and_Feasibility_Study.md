@@ -9,9 +9,9 @@ This project implements a computerized Point of Sale (POS) system to modernize c
 
 (a) Technical Architecture: The proposed POS system will be built using a Client-Server architecture. All core functionalities such as order management, billing, and inventory will be implemented using industry-standard open-source libraries. The front-end will utilize modern, existing stable frameworks e.g. React to ensure a responsive UI that can run on both tablets and desktop terminals. Instead of building a custom database engine, we will implement an industry-standard SQL or NoSQL database to ensure data persistence.[1]
 
-(b) Hardware Compartibiliy: The system wiil be optimised for industry-standard peripherals. We have confirmed the feasibility of using 10-inch touchscreen tablets (iOS/Android) as primary Point-of-Sale terminals. These devices provide the necessary mobility for tableside ordering while bolstering the power to handle concurrent requests without lagging, ensuring that order data is synced across all terminals in real-time.
+(b) Hardware Compartibiliy: The system wiil be optimised for industry-standard peripherals. We propose the use of 10-inch touchscreen tablets (iOS/Android) as primary Point-of-Sale terminals, pending hardware procurement and compatibility testing. These devices provide the necessary mobility for tableside ordering while bolstering the power to handle concurrent requests without lagging, ensuring that order data is synced across all terminals in real-time.
 
-(c) Team and Skills: As fourth-year students, our team has completed coursework in software engineering, database management, and networking, providing us with the technical foundation needed for this project. We have determined that high-level features like AI-driven inventory forecasting may be outside our current time constraints therefore, we are prioritizing a 'Minimum Viable Product' (MVP) that ensures stability and functionality over a large number of complex features.[1]
+(c) Team and Skills: As fourth-year students, our team has completed coursework in software engineering, database management, and networking, providing us with the technical foundation needed for this project. We estimate that high-level features like AI-driven inventory forecasting may be outside our current time constraints therefore, we are prioritizing a 'Minimum Viable Product' (MVP) that ensures stability and functionality over a large number of complex features.[1]
 
 (d) Security and Compliance: To comply with data privacy, we will implement Role-Based Access Control (RBAC) so only managers can view financial reports.
 
@@ -68,7 +68,7 @@ This section identifies potential threats to the project’s success and outline
     (i) Risk: Staff Resistance and High Learning Curve; When staff turnover is high, if the UI is too complex, order errors will increase.
         Probability: High
         Impact: Moderate
-        Mitigation: We will conduct User Acceptance Testing (UAT) with actual cafe staff before the final rollout.[4]
+        Mitigation: Mitigation: We plan to conduct User Acceptance Testing (UAT) with cafe staff before final rollout, pending securing a partner cafe willing to participate.[4]
 
 (c) Security Risks (Data Breach):
     
