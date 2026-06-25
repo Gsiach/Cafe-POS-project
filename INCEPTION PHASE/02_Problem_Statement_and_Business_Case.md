@@ -73,7 +73,8 @@ We **recommend implementing a modern digital POS system** as it addresses financ
 **ROI (%)** = (Savings − Investment) ÷ Investment × 100  
 **ROI (%)** = (3000 − 2000) ÷ 2000 × 100 = **50%**
 
-Meaning: Every $1 invested in the POS system returns $1.50 in value annually.
+Meaning: Every $1 invested in the POS system generates $0.50 in net return,
+totaling $1.50 in value returned per $1 invested annually.
 
 *Note:* Figures shown are **illustrative estimates** for a small café in Zambia. Actual numbers depend on transaction volume, staff, and inventory, but the **percentage improvements are realistic and aligned with trends observed in SMEs across Zambia and Southern Africa**.
 
