@@ -31,9 +31,12 @@ This operational, competitive, and technological environment defines the busines
 Key stake holders involved in this project include the following:
 <ul>
   <li>Cafe Owner/Business Manager – Oversees operations and requires sales and inventory reports.</li>
-  <li>Cashiers – Use the system for order entry and payment processing.</li>
-  <li>Kitchen Staff – Receive order details for preparation.</li>
+  <li>Administrator – Manages system configuration, user accounts, and menu items.</li>
+  <li>Manager – Monitors sales, inventory, and generates reports for business decisions.</li>
+  <li>Cashier – Uses the system for order entry and payment processing at the counter.</li>
+  <li>Kitchen Staff – Receives and updates incoming orders via the system.</li>
   <li>Customers – Indirect stakeholders who benefit from faster and more accurate service.</li>
+  <li>Development Team – Responsible for system design, implementation, and maintenance.</li>
   <li>Development Team – Responsible for system design, implementation, and maintenance.</li>
 </ul>
 
