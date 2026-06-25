@@ -159,6 +159,40 @@ for both counter and dine-in service.
 - A2: Actor adds a new inventory item → System creates a new inventory record with the provided details.
 - A3: Actor cancels → System discards changes and returns to inventory list.
 
+## Use Case 5: Update Order Status
+
+**Actor:** Kitchen Staff, Waiter
+**Description:** Allows Kitchen Staff and Waiters to update the status of an
+active order as it moves through preparation and delivery. Tracks the order
+lifecycle from placement through to final delivery at the table.
+
+### Basic Flow:
+1. Actor logs into system.
+2. Actor navigates to "Active Orders."
+3. System displays a list of all current orders and their statuses.
+4. Actor selects the order to update.
+5. System displays the current status of the selected order.
+6. Actor updates the order status according to their role:
+   - Kitchen Staff sets status to "Preparing" when preparation begins.
+   - Kitchen Staff sets status to "Ready" when preparation is complete.
+   - Waiter sets status to "Served" when the order is delivered to the table.
+7. System saves the updated status and reflects the change in the active
+   orders list.
+8. System notifies the relevant actor of the status change (e.g. Waiter
+   is notified when an order is "Ready" for delivery).
+
+### Alternate Flows:
+- A1: Actor attempts to skip a status (e.g. Placing directly to "Served") →
+  System rejects the update and displays an error. Status transitions must
+  follow the sequence: Placed → Preparing → Ready → Served.
+- A2: Order is cancelled before status is updated → System removes the order
+  from the active orders list. No further status updates are permitted.
+- A3: Actor selects the wrong order → Actor navigates back to the active
+  orders list and selects the correct order.
+
+### Order Status Lifecycle:
+Placed → Preparing → Ready → Served
+
 # Non-Functional Requirements
 Cafe Restaurant Point of Sale (POS) System
 
