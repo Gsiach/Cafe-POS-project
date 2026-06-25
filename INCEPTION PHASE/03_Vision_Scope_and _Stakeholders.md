@@ -22,7 +22,7 @@ Manage inventory in real-time and update stock levels after each sale.
 
 Alert management when stock reaches minimum threshold levels.
 
-Provide secure login access for different user roles (Admin, Manager, Cashier).
+Provide secure login access for different user roles (Administrator, Manager, Cashier, Waiter, Kitchen Staff).
 
 Generate daily, weekly, and monthly sales reports.
 
