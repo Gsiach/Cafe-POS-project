@@ -64,6 +64,20 @@ Functional requirements describe what the system must do.
 
 ---
 
+### 2.7 Order Status Management
+
+- FR26: The system shall allow Kitchen Staff to update the status of an
+  active order to "Preparing" and "Ready." The system shall allow Waiters
+  to update the status of an active order to "Served." Status transitions
+  shall follow the sequence: Placed → Preparing → Ready → Served.
+
+### 2.8 Table Management
+
+- FR27: The system shall support a fixed list of pre-numbered tables for
+  dine-in order assignment. A Cashier or Waiter shall be able to associate
+  a new dine-in order with a table number at the time of order creation.
+
+
 # 3. Use Case Model
 
 In the inception phase, high-level use cases are presented without excessive detail.
