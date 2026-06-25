@@ -121,7 +121,33 @@ In the inception phase, high-level use cases are presented without excessive det
 1. Manager logs in.
 2. Selects report type.
 3. Selects date range.
-4. System
+4. System generates and displays the report.
+5. Manager reviews the report.
+6. Manager optionally exports the report (PDF/Excel).
+
+### Alternate Flows:
+- A1: No data available for selected range → System displays "No records found" message.
+- A2: Manager cancels → System returns to dashboard.
+
+## Use Case 4: Update Inventory
+
+**Actor:** Manager / Administrator
+
+**Description:** Allows the Manager or Administrator to manually update stock levels, add new inventory items, and review current stock status.
+
+### Basic Flow:
+1. Actor logs in.
+2. Actor selects "Inventory Management."
+3. Actor selects an inventory item to update.
+4. System displays current stock level for the selected item.
+5. Actor enters the updated stock quantity.
+6. System saves the updated stock level.
+7. System confirms the update was successful.
+
+### Alternate Flows:
+- A1: Stock level falls below minimum threshold → System generates a low-stock alert to management.
+- A2: Actor adds a new inventory item → System creates a new inventory record with the provided details.
+- A3: Actor cancels → System discards changes and returns to inventory list.
 
 # Non-Functional Requirements
 Cafe Restaurant Point of Sale (POS) System
