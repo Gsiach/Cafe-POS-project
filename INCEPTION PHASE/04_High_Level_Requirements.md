@@ -82,24 +82,34 @@ In the inception phase, high-level use cases are presented without excessive det
 
 ## Use Case 1: Process Customer Order
 
-**Actor:** Cashier / Waiter  
-**Description:** Handles order creation and payment.
+**Actor:** Cashier / Waiter
+**Description:** Handles order creation, payment, and handoff to the kitchen
+for both counter and dine-in service.
 
 ### Basic Flow:
 1. Actor logs into system.
-2. Actor selects "New Order".
-3. Actor selects menu items.
-4. System calculates total.
-5. Actor selects payment method.
-6. System confirms payment.
-7. System prints receipt.
-8. Order is sent to the kitchen.
+2. Actor selects "New Order."
+3. System prompts Actor to select order type: Counter or Dine-in.
+4. If Dine-in: Actor enters the table number. System associates the order
+   with that table.
+5. Actor selects menu items and quantities.
+6. System calculates and displays the running total.
+7. Actor confirms the order is complete and selects "Proceed to Payment."
+8. Actor selects payment method (cash, card, or mobile money).
+9. System processes payment and confirms success.
+10. System prints or displays receipt.
+11. System sets order status to "Placed" and sends order details to
+    the kitchen.
 
 ### Alternate Flows:
-- A1: Customer cancels order.
-- A2: Payment fails → Retry payment.
-
----
+- A1: Customer cancels order before payment → Actor selects "Cancel Order."
+  System voids the order. No payment is processed.
+- A2: Payment fails → System notifies Actor. Actor retries payment or
+  selects an alternative payment method.
+- A3: Menu item is unavailable → System flags the item as out of stock.
+  Actor removes the item or substitutes with an available alternative.
+- A4: Actor needs to split the bill → Actor selects "Split Bill" before
+  payment. System divides the total and processes each portion separately.
 
 ## Use Case 2: Manage Menu
 
