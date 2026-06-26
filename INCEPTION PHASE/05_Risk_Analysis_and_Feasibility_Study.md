@@ -81,13 +81,15 @@ This section identifies potential threats to the project’s success and outline
 
 (d) Physical and Environmental Risks:
     
-    (i) Risk: Hardware Damage in Kitchen Environments; Kitchens are high-heat, high-moisture areas. Standard tablets or printers may fail 
-        due to grease or spills.
+    (i) Risk: Hardware Damage in Kitchen Environments; Kitchens are high-heat,
+        high-moisture areas. Standard desktop terminals or printers near kitchen
+        areas may be exposed to grease, moisture, or heat damage.
         Probability: Moderate
         Impact: High
-        Mitigation: The technical specifications will require IP-rated (water-resistant) enclosures for all tablets/terminals used in the 
-        kitchen.[4]
-
+	Mitigation: Kitchen-facing display terminals will be positioned away from
+	direct heat and moisture exposure. Protective enclosures will be used where
+	necessary, and terminals will be mounted on stable stands away from cooking
+	areas.[4]
     (ii) Risk: Theft of POS Tablets; Handheld tablets are high-value, portable targets for both opportunistic theft by customers and 
         internal theft by staff.
         Probability: High
@@ -104,11 +106,10 @@ This section identifies potential threats to the project’s success and outline
 | Risk ID | Description | Probability (1-5) | Impact (1-5) | Priority Score | Mitigation Strategy |
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | **R1** | **Server/Network Downtime** | 3 | 5 | **15 (High)** | Implement Local-First Sync / Offline Mode. |
-| **R2** | **Theft of Tablets** | 4 | 3 | **12 (Med)** | MDM software, Kiosk Mode, and lockable stands. |
+| **R2** | **Theft or Damage of POS Terminals** | 3 | 3 | **9 (Med)** | Lockable stands, restricted access to terminals, and kiosk mode. |
 | **R3** | **Staff Resistance** | 4 | 2 | **8 (Low)** | User-friendly UI and hands-on training sessions. |
 | **R4** | **Data Breach** | 1 | 5 | **5 (Med)** | RBAC and encryption (Zambian Data Protection Act). |
-| **R5** | **Hardware Damage** | 3 | 4 | **12 (Med)** | Use of IP-rated ruggedized enclosures. |
-
+| **R5** | **Hardware Damage in Kitchen Areas** | 2 | 4 | **8 (Med)** | Protective mounting, positioning away from heat and moisture. |
 
 # Conclusion
 ----------------

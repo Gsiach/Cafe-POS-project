@@ -14,7 +14,7 @@ Core Functional Scope
 
 The system will:
 
-Allow cashiers and waiters to process customer orders for both counterr(takeaway) and dine-in(table) service.
+Allow cashiers and waiters to process customer orders for both counter (takeaway) and dine-in (table) service.
 
 Automatically calculate totals, taxes, and generate digital receipts.
 

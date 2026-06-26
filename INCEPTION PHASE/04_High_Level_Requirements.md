@@ -127,13 +127,28 @@ for both counter and dine-in service.
 
 ## Use Case 2: Manage Menu
 
-**Actor:** Administrator  
+**Actor:** Administrator / Manager
+**Description:** Allows the Administrator to add, update, or remove menu
+items, and allows the Manager to mark items as unavailable. Ensures the
+menu reflects current offerings and pricing at all times.
 
 ### Basic Flow:
-1. Admin logs in.
-2. Selects "Menu Management".
-3. Adds, updates, or removes items.
-4. Saves changes.
+1. Actor logs into system.
+2. Actor selects "Menu Management."
+3. System displays the current menu item list with categories and prices.
+4. Administrator selects an action: Add Item, Edit Item, or Remove Item.
+5. Administrator enters or updates item details (name, category, price,
+   availability status).
+6. System saves the changes and updates the menu in real time.
+
+### Alternate Flows:
+- A1: Administrator removes an item that appears in active orders →
+  System warns Actor and prevents deletion until the active order
+  is resolved.
+- A2: Manager marks an item as unavailable → System flags the item
+  as out of stock across all order entry screens immediately.
+- A3: Actor cancels → System discards changes and returns to the
+  menu list.
 
 ---
 

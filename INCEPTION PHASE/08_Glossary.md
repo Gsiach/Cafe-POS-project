@@ -16,7 +16,8 @@ is completed.
 
 ## Order Status
 The current state of an order in the system. Valid statuses are:
-- **Pending** – Order has been created but not yet sent to the kitchen.
+- **Placed** – Order has been created and payment confirmed, but not yet
+  received by the kitchen.
 - **Preparing** – Order has been received by Kitchen Staff and is being prepared.
 - **Ready** – Order preparation is complete and is awaiting delivery.
 - **Served** – Order has been delivered to the customer.

@@ -15,12 +15,13 @@ Development will be iterative, with incremental refinement of requirements, desi
 
 ## 2. Phase Breakdown and Activities
 
-| Phase | Objective | Activities | Deliverables |
-|-------|-----------|------------|--------------|
-| **Inception** | Define project scope, vision, feasibility, and major risks. | Identify stakeholders<br>Define business context and problem statement<br>Develop vision and scope<br>Identify high-level requirements<br>Create high-level use case model<br>Conduct feasibility and risk analysis<br>Prepare initial project plan | Use-Case Model<br>Supplementary Specification<br>Glossary<br>Risk List & Risk Management Plan<br>Iteration Plan<br>Phase Plan & Software Development Plan<br>Development Case |
-| **Elaboration** | Refine requirements and establish system architecture. | Expand detailed use cases<br>Define system architecture<br>Identify database structure<br>Address high-priority risks<br>Create architectural prototype | Detailed use case specifications<br>Software architecture document<br>Updated risk assessment |
-| **Construction** | Develop and test the system. | Implement core functionalities (Process Sales, Inventory Management, Reporting, Staff Management)<br>Conduct unit and integration testing<br>Refine user interface<br>Perform system testing | Functional POS system<br>Test reports<br>Updated documentation |
-| **Transition** | Deploy and validate the system in a real or simulated environment. | System deployment<br>User training<br>Bug fixing and final adjustments<br>Final evaluation | Deployed system<br>User manual<br>Final project report |
+| Phase | Objective | Activities | Deliverables | Risks Addressed |
+|-------|-----------|------------|--------------|-----------------|
+| **Inception** | Define project scope, vision, feasibility, and major risks. | Identify stakeholders<br>Define business context and problem statement<br>Develop vision and scope<br>Identify high-level requirements<br>Create high-level use case model<br>Conduct feasibility and risk analysis<br>Prepare initial project plan | Use-Case Model<br>Supplementary Specification<br>Glossary<br>Risk List & Risk Management Plan<br>Iteration Plan<br>Phase Plan & Software Development Plan<br>Development Case | R1, R2, R3, R4, R5 identified and assessed |
+| **Elaboration** | Refine requirements and establish system architecture. | Expand detailed use cases<br>Define system architecture<br>Identify database structure<br>Address high-priority risks<br>Create architectural prototype | Detailed use case specifications<br>Software architecture document<br>Updated risk assessment | R1 (Offline-First architecture proof-of-concept)<br>R4 (RBAC design validated)<br>R5 (Kitchen terminal placement decided) |
+| **Construction** | Develop and test the system. | Implement core functionalities (Process Sales, Inventory Management, Reporting, Staff Management)<br>Conduct unit and integration testing<br>Refine user interface<br>Perform system testing | Functional POS system<br>Test reports<br>Updated documentation | R2 (Terminal security implemented)<br>R3 (Staff training sessions conducted) |
+| **Transition** | Deploy and validate the system in a real or simulated environment. | System deployment<br>User training<br>Bug fixing and final adjustments<br>Final evaluation | Deployed system<br>User manual<br>Final project report | R3 (UAT conducted with cafe staff)<br>R4 (Security audit completed) |
+
 
 ---
 

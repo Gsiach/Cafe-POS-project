@@ -90,7 +90,9 @@ totaling $1.50 in value returned per $1 invested annually.
 
 | Stakeholder | Role / Interest | Impact / How They Are Affected | Notes / Actions |
 |------------|----------------|-------------------------------|----------------|
-| **Café Staff (Cashiers, Baristas)** | Daily users of the POS | Will use the system for transactions; need training | Provide hands-on training and ongoing support |
+| **Cashier** | Daily user of the POS at the counter | Processes counter and dine-in orders, handles payments; needs training | Provide hands-on training and ongoing support |
+| **Waiter** | Daily user of the POS on the floor | Places dine-in table orders and updates order status to Served; needs training | Ensure UI is operable quickly during busy service |
+| **Kitchen Staff** | Receives and updates orders via the system | Views incoming orders and updates status to Preparing and Ready | Ensure kitchen display is clear and responsive |
 | **Management / Owners** | Decision-makers, monitor financials | Can make data-driven decisions, track sales, reduce revenue leakage | Dashboard access and regular reporting |
 | **Customers** | End-users of service | Experience faster, accurate, and reliable service; payment options increase convenience | Communicate POS benefits subtly (e.g., receipts, mobile payments) |
 | **Suppliers** | Provide inventory | May interact with system for stock updates or ordering | Could integrate basic stock notifications or reports |
