@@ -62,7 +62,7 @@ Be user-friendly with an intuitive graphical interface.
 
 The following features are not included in the initial release:
 
-Online ordering and delivery integration.
+Online ordering and third-party delivery platform integration.
 
 Mobile application version.
 

@@ -11,11 +11,11 @@ Functional requirements describe what the system must do.
 
 ### 2.1 Sales & Order Management
 
-- FR1: The system shall allow waiters/cashiers to create new customer orders.
+- FR1: The system shall allow Cashiers/Waiters to create new customer orders.
 - FR2: The system shall allow adding, editing, and removing items from an order.
 - FR3: The system shall calculate total cost including taxes and discounts.
 - FR4: The system shall generate and print receipts.
-- FR5: The system shall support dine-in, takeaway, and delivery orders.
+- FR5: The system shall support dine-in and takeaway orders.
 - FR6: The system shall allow splitting bills.
 - FR7: The system shall allow order cancellation with authorization.
 
@@ -49,7 +49,7 @@ Functional requirements describe what the system must do.
 ---
 
 ### 2.5 User Management
-
+B
 - FR20: The system shall allow user login and logout.
 - FR21: The system shall support role-based access control.
 - FR22: The system shall allow the administrator to create, update, and delete users.
@@ -232,7 +232,9 @@ Non-functional requirements define the quality attributes, constraints, and oper
 ## 1. Performance Requirements
 
 - NFR1: The system shall process a sales transaction within 2 seconds under normal operating conditions.
-- NFR2: The system shall support a minimum of 5 concurrent users without performance degradation.
+- NFR2: The system shall support a minimum of 5 concurrent users without
+  performance degradation (based on expected simultaneous system access:
+  1 Cashier, 1 Waiter, 1 Kitchen Staff terminal, 1 Manager, 1 Administrator).
 - NFR3: The system shall generate reports within 5 seconds for daily summaries.
 - NFR4: The system shall operate continuously during business hours without system failure.
 
@@ -244,8 +246,7 @@ Non-functional requirements define the quality attributes, constraints, and oper
 - NFR6: The system shall implement role-based access control (RBAC).
 - NFR7: The system shall encrypt sensitive payment data.
 - NFR8: The system shall maintain an audit log of all transactions and user activities.
-- NFR9: The system shall automatically log out inactive users after a defined timeout period.
-
+- NFR9: The system shall automatically log out inactive users after 15 minutes of inactivity.
 ---
 
 ## 3. Usability Requirements
