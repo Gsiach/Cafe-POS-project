@@ -49,7 +49,7 @@ Functional requirements describe what the system must do.
 ---
 
 ### 2.5 User Management
-B
+
 - FR20: The system shall allow user login and logout.
 - FR21: The system shall support role-based access control.
 - FR22: The system shall allow the administrator to create, update, and delete users.

@@ -7,9 +7,9 @@ This project implements a computerized Point of Sale (POS) system to modernize c
 --------------------
 1. TECHNICAL FEASIBILITY: Technical feasibility is the process of evaluating whether a product idea or feature can realistically be built using your team’s current technology, skills, and resources[1]
 
-(a) Technical Architecture: The proposed POS system will be built using a Client-Server architecture. All core functionalities such as order management, billing, and inventory will be implemented using industry-standard open-source libraries. The front-end will utilize modern, existing stable frameworks e.g. React to ensure a responsive UI that can run on both tablets and desktop terminals. Instead of building a custom database engine, we will implement an industry-standard SQL or NoSQL database to ensure data persistence.[1]
+(a) Technical Architecture: The proposed POS system will be built using a Client-Server architecture. All core functionalities such as order management, billing, and inventory will be implemented using industry-standard open-source libraries. The front-end will utilize modern, existing stable frameworks e.g. React to ensure a responsive UI optimized for desktop and laptop computers, with touch-friendly elements for optional touchscreen displays. Instead of building a custom database engine, we will implement an industry-standard SQL or NoSQL database to ensure data persistence.[1]
 
-(b) Hardware Compartibiliy: The system wiil be optimised for industry-standard peripherals. The system will run on standard Windows-based desktop or laptop computers, which are widely available and within the project's hardware budget. A touch-friendly UI will be implemented to support optional touchscreen monitors where available. These devices provide the necessary mobility for tableside ordering while bolstering the power to handle concurrent requests without lagging, ensuring that order data is synced across all terminals in real-time.
+(b) Hardware Compartibiliy: The system wiil be optimised for industry-standard peripherals. The system will run on standard Windows-based desktop or laptop computers, which are widely available and within the project's hardware budget. A touch-friendly UI will be implemented to support optional touchscreen monitors where available. These computers provide the necessary processing power to handle concurrent requests without lagging, ensuring that order data is synced across all terminals in real-time. Waiters enter dine-in orders at fixed counter terminals before returning to serve the table.
 
 (c) Team and Skills: As fourth-year students, our team has completed coursework in software engineering, database management, and networking, providing us with the technical foundation needed for this project. We estimate that high-level features like AI-driven inventory forecasting may be outside our current time constraints therefore, we are prioritizing a 'Minimum Viable Product' (MVP) that ensures stability and functionality over a large number of complex features.[1]
 
@@ -20,7 +20,7 @@ This project implements a computerized Point of Sale (POS) system to modernize c
 ------------------
 2. ECONOMIC FEASIBILITY: This section evaluates the financial viability of the POS system by comparing the estimated development costs against the long-term economic gains for the restaurant.[2]
 
-(a) Cost-Benefit Analysis: The primary economic justification for this project lies in the transition from manual to automated processes. While there is an initial cost in terms of hardware acquisition e.g tablets,printers and development time and labor, the system is designed to pay for itself within the first few months of operation through labor savings, error reduction and increased number of processed sales per quarter i.e more customers serviced over a given period of time. This will result in a positive Return on Investment(ROI).[2]
+(a) Cost-Benefit Analysis: The primary economic justification for this project lies in the transition from manual to automated processes. While there is an initial cost in terms of hardware acquisition e.g. desktop/laptop computers, printers and development time and labor, the system is designed to pay for itself within the first few months of operation through labor savings, error reduction and increased number of processed sales per quarter i.e more customers serviced over a given period of time. This will result in a positive Return on Investment(ROI).[2]
 
 (b) Revenue Growth via Operational Efficiency:
     
@@ -90,13 +90,10 @@ This section identifies potential threats to the project’s success and outline
 	direct heat and moisture exposure. Protective enclosures will be used where
 	necessary, and terminals will be mounted on stable stands away from cooking
 	areas.[4]
-    (ii) Risk: Theft of POS Tablets; Handheld tablets are high-value, portable targets for both opportunistic theft by customers and 
-        internal theft by staff.
+    (ii) Risk: Theft or Damage of POS Terminals; Desktop terminals are fixed installations but remain targets for opportunistic theft or vandalism. 
         Probability: High
         Impact: High
-        Mitigation: All stationary terminals (e.g., at the cashier or bar) will be secured using lockable stands. In the event of 
-        confirmed theft, the administrator can trigger a Remote Wipe to erase all local data. Devices will also be labeled with 
-        laser-etched cafe logos, making them useless for resale on the secondary market. We'll also establish kiosk mode on all terminals.[4]
+        Mitigation: Terminals will be secured with lockable stands and positioned in staff-only areas. Access is restricted by RBAC login. In the event of theft, the administrator deactivates the compromised user accounts immediately.
 
 # Risk matrix table
 -------------------
