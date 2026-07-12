@@ -1,6 +1,7 @@
 # Problem Statement and Business Case
 
 ## Problem Statement
+An analysis of operational practices within small café and restaurant environments reveals a range of interconnected challenges affecting efficiency, financial accuracy, customer satisfaction, and long-term business sustainability. These challenges can be categorised as follows: Operational Challenges, Financial Challenges, Management & Reporting Challenges, Customer Experience Challenges and Strategic Challenges.
 
 The café currently operates using **manual transaction recording and informal inventory tracking**. Cashiers calculate totals with calculators and record sales in paper receipt books, while stock levels are estimated visually, and end-of-day reconciliation is performed manually. This leads to **inconsistent financial reporting**, **limited inventory visibility**, increased risk of revenue leakage, longer customer wait times, and operational inefficiencies.
 
@@ -20,7 +21,22 @@ Despite these trends, the café continues to rely on manual systems. The absence
 
 In the desired operational state, the café would have **centralized, real-time transaction and inventory data**, enabling faster transactions, reliable reporting, consistent stock control, and improved customer experience. Success can be measured through **reduced reconciliation time, 100% transaction traceability, fewer inventory discrepancies, reduced spoilage, faster customer service**, and **improved scalability** if the café expands.
 
+### Summary of Key Challenges
+
+The analysis of current operational practices among Small and Medium Enterprises (SMEs) highlights several key challenges that hinder efficiency and business growth:
+
+- Continued reliance on manual or paper-based record-keeping systems
+- Ineffective inventory tracking and stock management
+- Inaccurate or inconsistent financial reporting
+- Time-consuming administrative and operational tasks
+- Lack of access to real-time business data for informed decision-making
+- Limited ability to monitor customer purchasing behaviour and preferences
+
+These challenges collectively reduce productivity, increase the likelihood of human error, and limit the enterprise’s capacity to make data-driven decisions necessary for sustainable growth and improved customer service.
+
 By addressing these recurring and systemic issues, the café can improve **financial transparency, operational efficiency, customer satisfaction, and long-term sustainability**, aligning with modern POS adoption trends in Zambia, neighbouring countries, and across Africa. This problem statement is a **living document**, evolving as further operational insights and technological advancements emerge ([Global POS Market Report, 2024](https://www.globalgrowthinsights.com/market-reports/pos-software-market-114100?utm_source=chatgpt.com); [ClearlyPayments, 2024](https://www.clearlypayments.com/blog/pos-system-statistics-the-most-popular-payment-tech-for-merchants/?utm_source=chatgpt.com); [SmallBusinessMgr, 2025](https://smallbusinessmgr.com/pos-system-adoption-rates/?utm_source=chatgpt.com); [Bank of Zambia, 2024](https://thebusinesstelegraph.com/zambias-digital-retail-payment-evolution-pos-transactions-surge-30-as-mobile-money-dominates-in-2024/?utm_source=chatgpt.com)).
+
+
 
 ---
 
@@ -49,6 +65,19 @@ We **recommend implementing a modern digital POS system** as it addresses financ
 
 **Financial KPI:** Expected **15–20% reduction in revenue leakage** within the first year.
 
+### ROI Calculation 
+
+**Estimated Investment:** $2,000 (POS system + setup + training)  
+**Expected Annual Savings:** $3,000 (Revenue leakage + staff time + spoilage reduction)  
+
+**ROI (%)** = (Savings − Investment) ÷ Investment × 100  
+**ROI (%)** = (3000 − 2000) ÷ 2000 × 100 = **50%**
+
+Meaning: Every $1 invested in the POS system generates $0.50 in net return,
+totaling $1.50 in value returned per $1 invested annually.
+
+*Note:* Figures shown are **illustrative estimates** for a small café in Zambia. Actual numbers depend on transaction volume, staff, and inventory, but the **percentage improvements are realistic and aligned with trends observed in SMEs across Zambia and Southern Africa**.
+
 ### Risk Assessment
 
 | Risk | Impact | Mitigation |
@@ -61,7 +90,9 @@ We **recommend implementing a modern digital POS system** as it addresses financ
 
 | Stakeholder | Role / Interest | Impact / How They Are Affected | Notes / Actions |
 |------------|----------------|-------------------------------|----------------|
-| **Café Staff (Cashiers, Baristas)** | Daily users of the POS | Will use the system for transactions; need training | Provide hands-on training and ongoing support |
+| **Cashier** | Daily user of the POS at the counter | Processes counter and dine-in orders, handles payments; needs training | Provide hands-on training and ongoing support |
+| **Waiter** | Daily user of the POS on the floor | Places dine-in table orders and updates order status to Served; needs training | Ensure UI is operable quickly during busy service |
+| **Kitchen Staff** | Receives and updates orders via the system | Views incoming orders and updates status to Preparing and Ready | Ensure kitchen display is clear and responsive |
 | **Management / Owners** | Decision-makers, monitor financials | Can make data-driven decisions, track sales, reduce revenue leakage | Dashboard access and regular reporting |
 | **Customers** | End-users of service | Experience faster, accurate, and reliable service; payment options increase convenience | Communicate POS benefits subtly (e.g., receipts, mobile payments) |
 | **Suppliers** | Provide inventory | May interact with system for stock updates or ordering | Could integrate basic stock notifications or reports |

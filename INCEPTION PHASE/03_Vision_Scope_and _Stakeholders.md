@@ -14,7 +14,7 @@ Core Functional Scope
 
 The system will:
 
-Allow cashiers to process customer orders quickly and accurately.
+Allow cashiers and waiters to process customer orders for both counter (takeaway) and dine-in (table) service.
 
 Automatically calculate totals, taxes, and generate digital receipts.
 
@@ -22,7 +22,7 @@ Manage inventory in real-time and update stock levels after each sale.
 
 Alert management when stock reaches minimum threshold levels.
 
-Provide secure login access for different user roles (Admin, Manager, Cashier).
+Provide secure login access for different user roles (Administrator, Manager, Cashier, Waiter, Kitchen Staff).
 
 Generate daily, weekly, and monthly sales reports.
 
@@ -62,7 +62,7 @@ Be user-friendly with an intuitive graphical interface.
 
 The following features are not included in the initial release:
 
-Online ordering and delivery integration.
+Online ordering and third-party delivery platform integration.
 
 Mobile application version.
 

@@ -1,103 +1,35 @@
-Iteration Plan – Café POS System
+# Project Plan – Cafe Small Restaurant POS System
 
-The Café POS System will follow an iterative and incremental development approach. Each iteration will deliver a working version of the system with increasing functionality and refinement.
+## 1. Development Approach
 
-Iteration 1: Requirements & System Foundation (Inception Phase)
+The project will follow the **Unified Process (UP)** lifecycle, consisting of four main phases:
 
-Duration: Week 1 – Week 2
+1. Inception  
+2. Elaboration  
+3. Construction  
+4. Transition  
 
-Objectives:
+Development will be iterative, with incremental refinement of requirements, design, and implementation.
 
-Identify system stakeholders.
+---
 
-Gather and document functional and non-functional requirements.
+## 2. Phase Breakdown and Activities
 
-Define system vision and scope.
+| Phase | Objective | Activities | Deliverables | Risks Addressed |
+|-------|-----------|------------|--------------|-----------------|
+| **Inception** | Define project scope, vision, feasibility, and major risks. | Identify stakeholders<br>Define business context and problem statement<br>Develop vision and scope<br>Identify high-level requirements<br>Create high-level use case model<br>Conduct feasibility and risk analysis<br>Prepare initial project plan | Use-Case Model<br>Supplementary Specification<br>Glossary<br>Risk List & Risk Management Plan<br>Iteration Plan<br>Phase Plan & Software Development Plan<br>Development Case | R1, R2, R3, R4, R5 identified and assessed |
+| **Elaboration** | Refine requirements and establish system architecture. | Expand detailed use cases<br>Define system architecture<br>Identify database structure<br>Address high-priority risks<br>Create architectural prototype | Detailed use case specifications<br>Software architecture document<br>Updated risk assessment | R1 (Offline-First architecture proof-of-concept)<br>R4 (RBAC design validated)<br>R5 (Kitchen terminal placement decided) |
+| **Construction** | Develop and test the system. | Implement core functionalities (Process Sales, Inventory Management, Reporting, Staff Management)<br>Conduct unit and integration testing<br>Refine user interface<br>Perform system testing | Functional POS system<br>Test reports<br>Updated documentation | R2 (Terminal security implemented)<br>R3 (Staff training sessions conducted) |
+| **Transition** | Deploy and validate the system in a real or simulated environment. | System deployment<br>User training<br>Bug fixing and final adjustments<br>Final evaluation | Deployed system<br>User manual<br>Final project report | R3 (UAT conducted with cafe staff)<br>R4 (Security audit completed) |
 
-Create initial system architecture design.
 
-Develop use case diagrams and system models.
+---
 
-Deliverables:
+## 3. Timeline Overview (Example Academic Schedule)
 
-Vision & Scope Document
-
-Use Case Diagram
-
-Software Requirements Specification (SRS)
-
-Initial Database Design
-
-Iteration 2: Core Sales Module Development
-
-Duration: Week 3 – Week 4
-
-Objectives:
-
-Develop user authentication (Admin, Manager, Cashier).
-
-Implement product management (Add, Edit, Delete items).
-
-Develop order processing module.
-
-Implement automatic total calculation.
-
-Generate digital receipts.
-
-Deliverables:
-
-Working Sales Processing System
-
-Login & Role-Based Access Control
-
-Functional POS Interface
-
-Iteration 3: Inventory & Reporting Module
-
-Duration: Week 5 – Week 6
-
-Objectives:
-
-Implement inventory tracking system.
-
-Auto-update stock after each sale.
-
-Add low-stock alert system.
-
-Generate sales reports (Daily, Weekly, Monthly).
-
-Implement transaction history storage.
-
-Deliverables:
-
-Inventory Management Module
-
-Reporting Dashboard
-
-Data Analytics Overview
-
-Iteration 4: Testing, Optimization & Deployment
-
-Duration: Week 7 – Week 8
-
-Objectives:
-
-Perform system testing (Unit, Integration, System Testing).
-
-Fix bugs and improve performance.
-
-Improve user interface and usability.
-
-Prepare final documentation.
-
-Deploy final version.
-
-Deliverables:
-
-Fully Tested POS System
-
-Test Report
-
-Deployment Package
-
-Final Project Documentation
+| Phase | Estimated Duration |
+|-------|--------------------|
+| Inception | 2–3 weeks |
+| Elaboration | 3–4 weeks |
+| Construction | 4–6 weeks |
+| Transition | 1–2 weeks |
