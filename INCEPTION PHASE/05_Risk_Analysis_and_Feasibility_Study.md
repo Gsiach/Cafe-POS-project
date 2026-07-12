@@ -25,7 +25,6 @@ This project implements a computerized Point of Sale (POS) system to modernize c
 (b) Revenue Growth via Operational Efficiency:
     
     (i) Increased Daily Sales Volume: A faster ordering and payment flow allows the cafe to serve more customers during peak hours, directly increasing the total number of transactions processed per day.
-
     (ii) Customer Retention and Loyalty: Faster service times and a reduction in order errors lead to a higher quality of service. This improved customer experience promotes repeat business and long-term customer retention, which is more cost-effective than acquiring new customers through marketing.
 
 (c)Labor Optimization and Automated Data Processing: A significant economic advantage of the proposed system is the elimination of manual data entry. It enables 'automated analytics' as it captures every transaction in real-time, generating instant financial reports. This removes the need for a dedicated administrative person to process sales data.[2]
