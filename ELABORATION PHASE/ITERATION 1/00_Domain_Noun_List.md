@@ -72,6 +72,15 @@ Payment. Nothing in FR1–FR27 references storing, looking up, or managing
 receipts after they are issued.
 Rationale: Fire-and-forget output. No persistent storage justified.
 
+### 9. SalesReport Is Not a Domain Class
+SalesReport fails the same filter as Receipt. FR24 says "generate sales
+reports filtered by date range" — the Manager requests it, the system
+displays it, and nothing in FR1–FR27 references storing, reprinting, or
+managing SalesReport after generation. The data it displays already lives
+in Order and OrderLineItem. SalesReport is a query result over those
+classes, not a persistent domain concept.
+Rationale: Fire-and-forget output. Same filter applied to Receipt.
+
 ---
 
 ## Rejected Candidates
@@ -88,6 +97,7 @@ Rationale: Fire-and-forget output. No persistent storage justified.
 | StockLevel | Attribute of InventoryItem — represented as `currentQuantity` and `minimumThreshold` directly on InventoryItem |
 | PaymentMethod | Enumeration attribute on Payment — `method: {Cash, Card, MobileMoney}` |
 | Receipt | Operation output only — system generates and prints/displays once. No persistent storage or lookup referenced in FR1–FR27 |
+| SalesReport | Operation output only — query result over Order and OrderLineItem. No persistent storage or lookup referenced in FR1–FR27. Same filter applied to Receipt |
 
 ---
 
@@ -108,9 +118,8 @@ Rationale: Fire-and-forget output. No persistent storage justified.
 | 11 | Administrator | UC2, UC4 | User subtype — manages system configuration |
 | 12 | KitchenStaff | UC5, FR26 | User subtype — updates order status to Preparing/Ready |
 | 13 | Role | FR20, Glossary | Permission set assigned to a User |
-| 14 | SalesReport | UC3, FR24 | Aggregated sales data generated for a date range |
-| 15 | InventoryItem | UC4, FR16 | A stock item tracked by the system. Carries `currentQuantity: Integer` and `minimumThreshold: Integer` |
-| 16 | LowStockAlert | FR18 | Notification triggered when InventoryItem currentQuantity falls below minimumThreshold |
+| 14 | InventoryItem | UC4, FR16 | A stock item tracked by the system. Carries `currentQuantity: Integer` and `minimumThreshold: Integer` |
+| 15 | LowStockAlert | FR18 | Notification triggered when InventoryItem currentQuantity falls below minimumThreshold |
 
 ---
 
@@ -125,3 +134,80 @@ Rationale: Fire-and-forget output. No persistent storage justified.
   currentQuantity falls below minimumThreshold (FR18)
 - User subtypes (Cashier, Waiter, Manager, Administrator, KitchenStaff)
   are distinguished by Role in the domain model
+
+---
+
+## Design Notes Addendum
+These notes explain non-obvious decisions that cannot be inferred from the
+class table alone. They exist so the domain modeler can draw the correct
+diagram without needing to reconstruct the reasoning from scratch.
+
+---
+
+**1. Why `OrderLineItem` exists as a separate class from `Order`**
+An Order contains multiple items, each with its own MenuItem reference,
+quantity, and line price. If OrderLineItem did not exist as a separate
+class, these per-item details would have to be stored as repeating
+attributes on Order — which violates basic normalization and makes it
+impossible to represent "3 lattes and 2 sandwiches" as distinct,
+individually-priced entries. OrderLineItem is the standard solution to
+the one-to-many relationship between an Order and its contents. Every
+POS system at any scale requires this class. It is not optional.
+
+---
+
+**2. Why `User` subtypes exist rather than one `User` class with a role attribute**
+A single User class with a `role` attribute is sufficient for authentication
+and RBAC — the system knows who you are and what role you have. The subtypes
+(Cashier, Waiter, Manager, Administrator, KitchenStaff) are kept in the
+domain model because they have genuinely different associations and
+participation in use cases, not just different data. Waiter associates
+with Order via `takenBy` and participates in UC5. KitchenStaff participates
+in UC5 but cannot create orders. Manager generates reports. Administrator
+manages MenuItems and InventoryItems. These behavioral differences justify
+separate subtypes in the conceptual model. In implementation, this may
+collapse to a single User table with a role column — but at the domain
+modeling level, the subtypes make the different responsibilities visible
+and traceable.
+
+---
+
+**3. Why `Table` is an optional association on `Order`, not a separate order subtype**
+The only difference between a counter order and a dine-in order is whether
+a Table is associated. There is no difference in behavior — both go through
+the same creation flow, the same payment flow, and the same status lifecycle
+(Placed → Preparing → Ready → Served). Larman's criterion for inheritance
+is genuinely different behavior, not different data. A nullable `table`
+association on Order (null for counter, populated for dine-in) is simpler,
+more maintainable, and just as expressive. Creating CounterOrder and
+DineInOrder as subtypes would add two classes and an inheritance hierarchy
+to solve a problem that one optional association already solves cleanly.
+
+---
+
+**4. Why `LowStockAlert` is kept as a class rather than rejected as an attribute**
+LowStockAlert is not an attribute of InventoryItem — it is a distinct
+domain event that the system generates and that has its own lifecycle
+separate from the InventoryItem that triggered it. An attribute on
+InventoryItem could tell you the current quantity is below threshold,
+but it cannot represent: when the alert was generated, whether it has
+been acknowledged by a Manager, or a history of past alerts for the
+same item. LowStockAlert exists as a class because it is a named,
+persistent domain event — not just a boolean flag. It survives the
+filter that rejected OrderStatus and PaymentMethod because those had
+no independent lifecycle; LowStockAlert does.
+
+---
+
+**5. Why `SalesReport` is rejected despite appearing in UC3 and FR24**
+SalesReport fails the same filter that rejected Receipt. FR24 says
+"generate sales reports filtered by date range" — the Manager requests
+it, the system displays it, and nothing in FR1–FR27 references storing,
+reprinting, or managing SalesReport after it is generated. The data
+it displays already lives in Order and OrderLineItem. SalesReport is
+a query result over those classes, not a persistent domain concept.
+Keeping it as a class would mean drawing a box in the domain model
+that has no real associations — it would just float there connected
+to nothing, which is the signal that something was listed but not
+actually needed. Rejected for the same reason as Receipt: fire-and-forget
+system output.
