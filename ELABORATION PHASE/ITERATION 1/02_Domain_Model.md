@@ -34,7 +34,7 @@ The domain model is decomposed into three primary logical clusters to organize t
 * **Attributes**:
     * `name`: `String` — The unique public name of the menu item.
     * `price`: `Decimal` — The unit cost of the menu item in local currency.
-
+    * `availability`: `boolean` — The boolean attribute shows whether a menu item is currently available to order, or if it's out of stock.
 #### Class: `MenuItemCategory`
 * **Description**: A classification category (e.g., "Beverages", "Desserts", "Mains") used to group menu items for easier navigation (UC2).
 * **Attributes**:
