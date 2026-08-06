@@ -36,12 +36,12 @@ This project implements a computerized Point of Sale (POS) system to modernize c
 
 (a) User Adoption and Learning Curve: We have designed the user interface (UI) to be highly intuitive, utilizing an approach that mimics common smartphone interactions. By reducing the number of "clicks" required to complete an order, we minimize the training time required for new employees. A simplified layout ensures that even during rush hours, the risk of human error in order entry is significantly reduced.[2]
 
-(b) Workflow Integration and Service Speed: The system is engineered to enhance existing cafe workflows. The transition from manual ticket-writing to digital entry allows for instantaneous communication between the dining area and the kitchen. This facilitates real time updates i.e. kitchen staff receive orders immediately on a display or printer, eliminating the need for servers to walk back and forth.[2]
+(b) Workflow Integration and Service Speed: The system is engineered to enhance existing cafe workflows. The transition from manual ticket-writing to digital entry allows for instantaneous communication between the dining area and the kitchen. This facilitates real time updates i.e. kitchen staff receive orders immediately on a display or printer, eliminating the need for servers to walk back and forth. By automating the calculation of order totals and payment processing, the system ensures that every customer receives a consistent and professional checkout experience, regardless of which staff member is operating the terminal.[2]
 
 (d) Management Oversight and Data Accessibility: For management, the system provides operational transparency that was previously impossible with manual methods. Managers can monitor live sales data, track inventory levels, and identify "peak hour" trends from a centralized dashboard. This data-driven approach allows for better staff scheduling and stock management, ensuring the cafe is always prepared for customer demand.
 
 --------------------
-4. LEGAL FEASIBILITY: This section evaluates the project’s compliance with the statutory and regulatory frameworks of the Republic of Zambia.
+1. LEGAL FEASIBILITY: This section evaluates the project’s compliance with the statutory and regulatory frameworks of the Republic of Zambia.
 
 (a) Data Protection and Privacy: The cafe will act as a "Data Controller," ensuring that personal information is collected for explicit and legitimate purposes. In line with the Data Protection Act No. 3 of 2021, we will implement access controls to prevent unauthorized access to sensitive data, ensuring the "Right to Privacy" as enshrined in the Zambian Constitution.[5]
 
