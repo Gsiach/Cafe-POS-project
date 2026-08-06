@@ -25,7 +25,6 @@ This project implements a computerized Point of Sale (POS) system to modernize c
 (b) Revenue Growth via Operational Efficiency:
     
     (i) Increased Daily Sales Volume: A faster ordering and payment flow allows the cafe to serve more customers during peak hours, directly increasing the total number of transactions processed per day.
-
     (ii) Customer Retention and Loyalty: Faster service times and a reduction in order errors lead to a higher quality of service. This improved customer experience promotes repeat business and long-term customer retention, which is more cost-effective than acquiring new customers through marketing.
 
 (c)Labor Optimization and Automated Data Processing: A significant economic advantage of the proposed system is the elimination of manual data entry. It enables 'automated analytics' as it captures every transaction in real-time, generating instant financial reports. This removes the need for a dedicated administrative person to process sales data.[2]
@@ -42,7 +41,7 @@ This project implements a computerized Point of Sale (POS) system to modernize c
 (d) Management Oversight and Data Accessibility: For management, the system provides operational transparency that was previously impossible with manual methods. Managers can monitor live sales data, track inventory levels, and identify "peak hour" trends from a centralized dashboard. This data-driven approach allows for better staff scheduling and stock management, ensuring the cafe is always prepared for customer demand.
 
 --------------------
-4. LEGAL FEASIBILITY: This section evaluates the project’s compliance with the statutory and regulatory frameworks of the Republic of Zambia.
+1. LEGAL FEASIBILITY: This section evaluates the project’s compliance with the statutory and regulatory frameworks of the Republic of Zambia.
 
 (a) Data Protection and Privacy: The cafe will act as a "Data Controller," ensuring that personal information is collected for explicit and legitimate purposes. In line with the Data Protection Act No. 3 of 2021, we will implement access controls to prevent unauthorized access to sensitive data, ensuring the "Right to Privacy" as enshrined in the Zambian Constitution.[5]
 
