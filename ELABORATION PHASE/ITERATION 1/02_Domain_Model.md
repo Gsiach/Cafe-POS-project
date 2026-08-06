@@ -9,7 +9,7 @@ This document provides the conceptual domain model for the Cafe Restaurant POS s
 
 The domain model is decomposed into three primary logical clusters to organize the 15 accepted conceptual classes:
 1. **Core Ordering Cluster**: Captures customer selections, dining tables, menu cataloging, and order tracking.
-2. **Users & Subtypes (RBAC Cluster)**: Models system security, roles, and specialized staff behaviors (Cashier, Waiter, Manager, Admin, Kitchen Staff).
+2. **Users & Subtypes (RBAC Cluster)**: Models system security, roles, and specialized staff behaviors (Cashier, Waiter, Manager, Admin, KitchenStaff).
 3. **Payment & Inventory Cluster**: Models financial transactions and tracking of stock thresholds with automated domain event alerts.
 
 ---
