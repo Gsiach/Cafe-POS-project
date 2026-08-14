@@ -1,0 +1,55 @@
+@startuml package_diagram
+title Cafe Restaurant POS System - Architectural Package Diagram
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam linetype ortho
+skinparam dpi 150
+
+package "Presentation Layer" {
+
+    package "Order Management UI" as OrderUI
+    package "Menu Management UI" as MenuUI
+    package "User & Access UI" as UserUI
+    package "Inventory & Reporting UI" as InventoryUI
+}
+
+package "Application / Domain Layer" {
+
+    package "Order Management" as OrderManagement
+    package "Menu Management" as MenuManagement
+    package "User & Access Management" as UserManagement
+    package "Payment Processing" as PaymentProcessing
+    package "Inventory Management" as InventoryManagement
+    package "Business Rules" as BusinessRules
+}
+
+package "Data / Persistence Layer" {
+
+    package "Repositories" as Repositories
+    package "Local Database" as LocalDatabase
+    package "Synchronization" as Synchronization
+}
+
+OrderUI --> OrderManagement
+MenuUI --> MenuManagement
+UserUI --> UserManagement
+InventoryUI --> InventoryManagement
+
+OrderManagement --> BusinessRules
+MenuManagement --> BusinessRules
+UserManagement --> BusinessRules
+PaymentProcessing --> BusinessRules
+InventoryManagement --> BusinessRules
+
+OrderManagement --> Repositories
+MenuManagement --> Repositories
+UserManagement --> Repositories
+PaymentProcessing --> Repositories
+InventoryManagement --> Repositories
+
+Repositories --> LocalDatabase
+Synchronization --> LocalDatabase
+Repositories --> Synchronization
+
+@enduml
