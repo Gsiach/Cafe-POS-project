@@ -54,63 +54,58 @@ This project implements a computerized Point of Sale (POS) system to modernize c
 
 This section identifies potential threats to the project’s success and outlines strategies to prevent or minimize their impact on the cafe’s operations.[3,4]
 
-### (a) Technical Risks (System Failure)
-* **R1: Server / Network Downtime**
-  * **Description:** If the local network or cloud connection fails during service, checkout operations could stall.
-  * **Updated Assessment:** Probability: 3 (Moderate) | Impact: 5 (Critical)
-  * **Mitigation Strategy & Implemented Actions:** Architected an **Offline-First / Local-First Architecture** using a local database storage engine. Transactions are persisted locally during an outage and automatically synchronized with the cloud/central repository once connectivity is re-established.[4]
+(a) Technical Risks(System Failure):
 
-### (b) Operational & Project Management Risks
-* **R2: High Learning Curve & Staff Resistance**
-  * **Description:** High staff turnover or non-intuitive user interfaces could lead to ordering delays and increased input errors during peak cafe hours.
-  * **Updated Assessment:** Probability: 3 (Moderate) | Impact: 2 (Low)
-  * **Mitigation Strategy & Implemented Actions:** Conducted User Acceptance Testing (UAT) with simplified, touch-friendly UI layouts that mimic common smartphone workflows to minimize click counts and training overhead.[4]
+    (i) Risk: Server or network down time;If the local Wi-Fi or the cloud server fails, the cafe cannot process orders.
+        Probability: Moderate
+        Impact: Critical
+        Mitigation: We will implement an Offline-First Architecture. The system will use a local database to store transactions locally 
+        during an outage and automatically sync with the cloud once the connection is restored.[4]
 
-* **R3: Tight Project Timeline & Upcoming Deadlines**
-  * **Description:** With a strict upcoming deadline (e.g., Monday deliverable) and multiple parallel design artifacts required (Design Class Diagrams, markdown specifications, risk matrices), there is a risk of incomplete deliverables or rushed peer review.
-  * **Updated Assessment:** Probability: 4 (High) | Impact: 4 (High)
-  * **Mitigation Strategy & Implemented Actions:** Standardized task division across team members, utilized automated diagram generation tools, prioritized Minimum Viable Product (MVP) core requirements, and set strict internal review checkpoints prior to final Git pull requests.
+(b) Operational Risks (Human Error):
 
-* **R4: Team Coordination & Version Control Bottlenecks**
-  * **Description:** Concurrent edits across shared repository files (such as markdown documentation and diagram image assets) could lead to merge conflicts, lost work, or broken references across branches.
-  * **Updated Assessment:** Probability: 3 (Moderate) | Impact: 3 (Moderate)
-  * **Mitigation Strategy & Implemented Actions:** Enforced feature-branch workflows (`git checkout -b elaboration/iteration-2-risk-list`), isolated file responsibilities per team member, and instituted mandatory peer reviews before merging into the `main` branch.
+    (i) Risk: Staff Resistance and High Learning Curve; When staff turnover is high, if the UI is too complex, order errors will increase.
+        Probability: High
+        Impact: Moderate
+        Mitigation: Mitigation: We plan to conduct User Acceptance Testing (UAT) with cafe staff before final rollout, pending securing a partner cafe willing to participate.[4]
 
-### (c) Security & Data Privacy Risks
-* **R5: Unauthorized Access & Data Breach**
-  * **Description:** Compromise of administrative or managerial accounts could result in leaked financial reporting or unauthorized modification of system settings.
-  * **Updated Assessment:** Probability: 1 (Low) | Impact: 5 (Critical)
-  * **Mitigation Strategy & Implemented Actions:** Enforced Role-Based Access Control (RBAC) at the architectural level (restricting managerial functions to `Manager` and `Administrator` roles) and mandated encryption for sensitive credentials and ZRA tax compliance data at rest.[5]
+(c) Security Risks (Data Breach):
+    
+    (i) Risk: Unauthorised Access to Financial Records; A breach of manager-level data could lead to internal theft or loss of sensitive
+        business intelligence. 
+        Probability: Low
+        Impact: High
+        Mitigation: We will enforce Role-Based Access Control (RBAC) for administrative accounts. All sensitive data, such as ZRA tax 
+        records and employee PINs, will be encrypted at rest.
 
-### (d) Physical & Environmental Risks
-* **R6: Hardware Damage in Kitchen Environments**
-  * **Description:** Kitchen terminals and receipt printers are exposed to high heat, moisture, grease, and accidental spills.
-  * **Updated Assessment:** Probability: 2 (Low) | Impact: 4 (High)
-  * **Mitigation Strategy & Implemented Actions:** Designed terminal placement specifications requiring kitchen displays to be mounted on protective, elevated stands positioned safely away from primary cooking and washing stations.[4]
-
-* **R7: Theft or Vandalism of POS Terminals**
-  * **Description:** Fixed terminal hardware located in customer-facing counter areas remains a target for opportunistic theft or physical tampering.
-  * **Updated Assessment:** Probability: 3 (Moderate) | Impact: 3 (Moderate)
-  * **Mitigation Strategy & Implemented Actions:** Terminals are physically secured via lockable stands and configured in restricted "kiosk mode." Role-based authentication prevents unauthorized use, and administrative accounts can instantly revoke compromised user credentials.
-
----
+(d) Physical and Environmental Risks:
+    
+    (i) Risk: Hardware Damage in Kitchen Environments; Kitchens are high-heat,
+        high-moisture areas. Standard desktop terminals or printers near kitchen
+        areas may be exposed to grease, moisture, or heat damage.
+        Probability: Moderate
+        Impact: High
+	Mitigation: Kitchen-facing display terminals will be positioned away from
+	direct heat and moisture exposure. Protective enclosures will be used where
+	necessary, and terminals will be mounted on stable stands away from cooking
+	areas.[4]
+    (ii) Risk: Theft or Damage of POS Terminals; Desktop terminals are fixed installations but remain targets for opportunistic theft or vandalism. 
+        Probability: High
+        Impact: High
+        Mitigation: Terminals will be secured with lockable stands and positioned in staff-only areas. Access is restricted by RBAC login. In the event of theft, the administrator deactivates the compromised user accounts immediately.
 
 # Risk matrix table
 -------------------
 ### Risk Assessment & Priority Matrix
 [4]
 
-The priority score is calculated using the formula: **Priority Score = Probability (1–5) × Impact (1–5)**.
-
-| Risk ID | Description | Category | Probability (1-5) | Impact (1-5) | Priority Score | Mitigation Strategy & Actual Actions Taken |
-| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| **R1** | **Server/Network Downtime** | Technical | 3 | 5 | **15 (High)** | Local-First Sync / Offline Mode database persistence. |
-| **R2** | **Staff Resistance / Learning Curve** | Operational | 3 | 2 | **6 (Low)** | Intuitive smartphone-like UI design and streamlined ordering flows. |
-| **R3** | **Tight Timeline & Monday Deadline** | Project Mgmt | 4 | 4 | **16 (High)** | Task breakdown, MVP scope control, and staged submission targets. |
-| **R4** | **Team Coordination & Git Conflicts** | Project Mgmt | 3 | 3 | **9 (Med)** | Isolated feature branches (`elaboration/iteration-1-domain-model`) and PR reviews. |
-| **R5** | **Data Breach / Unauthorized Access** | Security | 1 | 5 | **5 (Med)** | Enforced RBAC and encryption of sensitive data at rest. |
-| **R6** | **Hardware Damage in Kitchen** | Physical | 2 | 4 | **8 (Med)** | Protective mounting away from heat, grease, and moisture. |
-| **R7** | **Theft or Damage of POS Terminals** | Physical | 3 | 3 | **9 (Med)** | Lockable stands, kiosk mode, and administrative credential revocation. |
+| Risk ID | Description | Probability (1-5) | Impact (1-5) | Priority Score | Mitigation Strategy |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **R1** | **Server/Network Downtime** | 3 | 5 | **15 (High)** | Implement Local-First Sync / Offline Mode. |
+| **R2** | **Theft or Damage of POS Terminals** | 3 | 3 | **9 (Med)** | Lockable stands, restricted access to terminals, and kiosk mode. |
+| **R3** | **Staff Resistance** | 4 | 2 | **8 (Low)** | User-friendly UI and hands-on training sessions. |
+| **R4** | **Data Breach** | 1 | 5 | **5 (Med)** | RBAC and encryption (Zambian Data Protection Act). |
+| **R5** | **Hardware Damage in Kitchen Areas** | 2 | 4 | **8 (Med)** | Protective mounting, positioning away from heat and moisture. |
 
 # Conclusion
 ----------------
