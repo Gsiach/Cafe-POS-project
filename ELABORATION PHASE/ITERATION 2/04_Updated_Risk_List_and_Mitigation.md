@@ -60,7 +60,7 @@ The priority score is calculated using the standard formula: **Priority Score = 
 | **R2** | **Staff Resistance / Learning Curve** | Operational | 3 | 2 | **6 (Low)** | Intuitive smartphone-like UI design and streamlined ordering flows. |
 | **R3** | **Tight Timeline & Monday Deadline** | Project Mgmt | 4 | 4 | **16 (High)** | Task breakdown, MVP scope control, and staged submission targets. |
 | **R4** | **Team Coordination & Git Conflicts** | Project Mgmt | 3 | 3 | **9 (Med)** | Isolated feature branches (`elaboration/iteration-1-domain-model`) and PR reviews. |
-| **R5** | **Data Breach / Unauthorized Access** | Security | 1 | 5 | **5 (Med)** | Enforced RBAC and encryption of sensitive data at rest. |
+| **R5** | **Data Breach / Unauthorized Access** | Security | 1 | 5 | **5 (Low)** | Enforced RBAC and encryption of sensitive data at rest. |
 | **R6** | **Hardware Damage in Kitchen** | Physical | 2 | 4 | **8 (Med)** | Protective mounting away from heat, grease, and moisture. |
 | **R7** | **Theft or Damage of POS Terminals** | Physical | 3 | 3 | **9 (Med)** | Lockable stands, kiosk mode, and administrative credential revocation. |
 
