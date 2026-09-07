@@ -6,50 +6,65 @@ skinparam shadowing false
 skinparam linetype ortho
 skinparam dpi 150
 
-package "Presentation Layer" {
+package "Cafe Restaurant POS System" {
 
-    package "Order Management UI" as OrderUI
-    package "Menu Management UI" as MenuUI
-    package "User & Access UI" as UserUI
-    package "Inventory & Reporting UI" as InventoryUI
+    package "Presentation Layer" {
+
+        package "Order Management UI" as OrderUI
+        package "Menu Management UI" as MenuUI
+        package "User & Access UI" as UserUI
+        package "Inventory & Reporting UI" as InventoryUI
+    }
+
+    package "Application / Domain Layer" {
+
+        package "Order Management" as OrderManagement
+        package "Menu Management" as MenuManagement
+        package "User & Access Management" as UserManagement
+        package "Payment Processing" as PaymentProcessing
+        package "Inventory Management" as InventoryManagement
+        package "Business Rules" as BusinessRules
+    }
+
+    package "Data / Persistence Layer" {
+
+        package "Repositories" as Repositories
+        package "Local Database" as LocalDatabase
+        package "Synchronization" as Synchronization
+    }
 }
 
-package "Application / Domain Layer" {
+package "Remote Database" as RemoteDatabase
 
-    package "Order Management" as OrderManagement
-    package "Menu Management" as MenuManagement
-    package "User & Access Management" as UserManagement
-    package "Payment Processing" as PaymentProcessing
-    package "Inventory Management" as InventoryManagement
-    package "Business Rules" as BusinessRules
-}
-
-package "Data / Persistence Layer" {
-
-    package "Repositories" as Repositories
-    package "Local Database" as LocalDatabase
-    package "Synchronization" as Synchronization
-}
-
+' Presentation Layer dependencies
 OrderUI --> OrderManagement
 MenuUI --> MenuManagement
 UserUI --> UserManagement
 InventoryUI --> InventoryManagement
 
+' Application / Domain Layer dependencies
 OrderManagement --> BusinessRules
 MenuManagement --> BusinessRules
 UserManagement --> BusinessRules
 PaymentProcessing --> BusinessRules
 InventoryManagement --> BusinessRules
 
+' Payment is initiated through the Process Customer Order flow
+OrderManagement --> PaymentProcessing
+
+' Application / Domain Layer to Data / Persistence Layer
 OrderManagement --> Repositories
 MenuManagement --> Repositories
 UserManagement --> Repositories
 PaymentProcessing --> Repositories
 InventoryManagement --> Repositories
 
+' Persistence and offline-first synchronization
 Repositories --> LocalDatabase
-Synchronization --> LocalDatabase
 Repositories --> Synchronization
+Synchronization --> LocalDatabase
+
+' Remote synchronization destination
+Synchronization --> RemoteDatabase : sync when connectivity is detected
 
 @enduml

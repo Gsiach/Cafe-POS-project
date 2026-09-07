@@ -73,6 +73,7 @@ The architecture of the Cafe Restaurant POS System is designed to achieve the fo
 
 - **Support core POS operations:** Provide a reliable foundation for Process Customer Order, Update Order Status, and Manage Menu.
 - **Enable offline-first operation:** Allow essential POS operations to continue when network connectivity is unavailable, with locally persisted data available for later synchronization.
+- **Define synchronization behavior:** Synchronization is triggered automatically when network connectivity is detected, with the local database serving as the primary data store during offline periods.
 - **Separate responsibilities:** Clearly separate the Presentation, Application / Domain, and Data / Persistence layers to improve maintainability and reduce coupling.
 - **Enforce business rules:** Centralize important rules such as OrderStatus transitions, Role-Based Access Control, MenuItem availability, and Order validation within the Application / Domain layer.
 - **Support multiple Users and Roles:** Provide appropriate access for Cashier, Waiter, Kitchen Staff, Manager, and Administrator.
@@ -134,4 +135,8 @@ The three primary layers are:
 |  Persistence Services | Local Operational Data       |
 |  Order Data | Menu Data | User Data | Inventory      |
 |  Payment Data | LowStockAlert Data                   |
-+------------------------------------------------------+
++------------------------------------------------------+ 
+
+Payment processing is initiated as part of the **Process Customer Order** workflow through the **Order Management** component. There is no separate Payment UI. After the order details and payment method have been confirmed, Order Management invokes the **Payment Processing** component, which applies the relevant payment processing and business rules before the payment is persisted through the repository layer. This reflects the domain requirement that payment occurs as part of completing an order rather than as a separate workflow.
+
+The Data / Persistence Layer supports offline-first operation through the Local Database and Synchronization components. The Local Database serves as the primary data store during offline periods, allowing essential POS operations to continue without network connectivity. Synchronization is triggered automatically when network connectivity is detected, at which point locally stored data can be synchronized with the Remote Database. This allows the system to continue operating locally while maintaining a mechanism for restoring consistency with the remote data store when connectivity becomes available.
