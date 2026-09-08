@@ -3,18 +3,16 @@ import { supabase } from "../lib/supabaseClient"
 
 export default function ManagerDashboard({ session }) {
   const [orders, setOrders] = useState([])
+  const [lowStock, setLowStock] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetchOrders()
+    fetchLowStock()
 
     const channel = supabase
       .channel("manager-orders")
-      .on(
-        "postgres_changes",
-        { event: "*", schema: "public", table: "orders" },
-        () => fetchOrders()
-      )
+      .on("postgres_changes", { event: "*", schema: "public", table: "orders" }, () => fetchOrders())
       .subscribe()
 
     return () => supabase.removeChannel(channel)
@@ -25,10 +23,21 @@ export default function ManagerDashboard({ session }) {
       .from("orders")
       .select("*, cafe_tables(table_number), payments(amount, method)")
       .order("created_at", { ascending: false })
-
     if (error) console.error("Orders fetch error:", error)
     else setOrders(data)
     setLoading(false)
+  }
+
+  async function fetchLowStock() {
+    const { data, error } = await supabase
+      .from("inventory_items")
+      .select("*")
+    if (error) {
+      console.error("Inventory fetch error:", error)
+      return
+    }
+    const low = data.filter(item => item.current_quantity < item.minimum_threshold)
+    setLowStock(low)
   }
 
   const totalRevenue = orders.reduce((sum, o) => {
@@ -47,7 +56,7 @@ export default function ManagerDashboard({ session }) {
     <div style={{ padding: "20px" }}>
       <h2>Manager Dashboard</h2>
 
-      <div style={{ display: "flex", gap: "16px", marginBottom: "24px" }}>
+      <div style={{ display: "flex", gap: "16px", marginBottom: "24px", flexWrap: "wrap" }}>
         <div className="panel" style={{ minWidth: "160px" }}>
           <h3>Total Orders</h3>
           <p style={{ fontSize: "24px" }}>{orders.length}</p>
@@ -60,6 +69,15 @@ export default function ManagerDashboard({ session }) {
           <h3>By Status</h3>
           {Object.entries(statusCounts).map(([status, count]) => (
             <p key={status} style={{ margin: "4px 0" }}>{status}: {count}</p>
+          ))}
+        </div>
+        <div className="panel" style={{ minWidth: "200px" }}>
+          <h3>Low Stock Alerts</h3>
+          {lowStock.length === 0 && <p>All stock levels okay.</p>}
+          {lowStock.map(item => (
+            <p key={item.id} style={{ margin: "4px 0", color: "#e05252" }}>
+              ⚠ {item.name}: {item.current_quantity} left (min {item.minimum_threshold})
+            </p>
           ))}
         </div>
       </div>
