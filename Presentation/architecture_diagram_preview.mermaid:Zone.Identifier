@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://claude.ai/chat/45be04be-31ed-4416-9d60-8345f75ee61d
+HostUrl=https://claude.ai/api/organizations/10f133ea-7139-4cbf-bb10-389e131f20db/conversations/45be04be-31ed-4416-9d60-8345f75ee61d/wiggle/download-file?path=%2Fmnt%2Fuser-data%2Foutputs%2Farchitecture_diagram_preview.mermaid

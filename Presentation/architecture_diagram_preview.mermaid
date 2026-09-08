@@ -1,0 +1,45 @@
+graph TD
+    subgraph PRES["Presentation Layer"]
+        IUI["InventoryUI"]
+        UUI["UserUI"]
+        MUI["MenuUI"]
+        OUI["OrderUI"]
+    end
+
+    subgraph APPD["Application / Domain Layer"]
+        IM["InventoryManagement"]
+        UM["UserManagement"]
+        MM["MenuManagement"]
+        OM["OrderManagement"]
+        PP["PaymentProcessing"]
+        BR["BusinessRules"]
+    end
+
+    subgraph DATA["Data / Persistence Layer"]
+        REPO["Repositories"]
+        LDB[("LocalDatabase")]
+        SYNC{{"Synchronization"}}
+        RDB[("RemoteDatabase (Supabase)")]
+    end
+
+    IUI --> IM
+    UUI --> UM
+    MUI --> MM
+    OUI --> OM
+    OM --> PP
+
+    IM --> BR
+    UM --> BR
+    MM --> BR
+    OM --> BR
+    PP --> BR
+
+    IM --> REPO
+    UM --> REPO
+    MM --> REPO
+    OM --> REPO
+    PP --> REPO
+
+    REPO --> LDB
+    LDB --> SYNC
+    SYNC -->|"sync when connectivity restored"| RDB

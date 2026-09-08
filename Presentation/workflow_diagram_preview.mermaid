@@ -1,0 +1,21 @@
+sequenceDiagram
+    actor Staff as Cashier / Waiter
+    participant UI as OrderUI
+    participant DB as Supabase (orders, order_line_items)
+    participant Kitchen as KitchenDisplay
+    participant Active as ActiveOrders (Waiter)
+    participant Mgr as ManagerDashboard
+
+    Staff->>UI: Add items to cart
+    Staff->>UI: Choose order type, table, payment method
+    Staff->>UI: Confirm Order
+    UI->>DB: Insert order (status = Placed) + order_line_items
+    DB-->>Kitchen: Realtime push - new order (Placed)
+    Kitchen->>DB: Mark Preparing
+    DB-->>Kitchen: status = Preparing
+    Kitchen->>DB: Mark Ready
+    DB-->>Active: Realtime push - status = Ready
+    Active->>DB: Mark Served
+    DB-->>Mgr: Refresh totals, status counts, low-stock alerts
+
+    Note over DB: Offline: writes queue in LocalDatabase,<br/>then sync to Supabase when connectivity returns
