@@ -9,6 +9,11 @@ import ManagerDashboard from "./components/ManagerDashboard"
 export default function App() {
   const [session, setSession] = useState(null)
   const [userRole, setUserRole] = useState(null)
+  const [theme, setTheme] = useState("dark")
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme)
+  }, [theme])
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -34,18 +39,34 @@ export default function App() {
     if (data) setUserRole(data.roles.role_name)
   }
 
-  if (!session) return <Login />
+  function toggleTheme() {
+    setTheme(prev => (prev === "dark" ? "light" : "dark"))
+  }
 
+  const themeButton = (
+    <button className="theme-toggle" onClick={toggleTheme}>
+      {theme === "dark" ? "☀ Light" : "🌙 Dark"}
+    </button>
+  )
+
+  if (!session) return <>{themeButton}<Login /></>
+
+  let screen
   switch (userRole) {
     case "Cashier":
     case "Waiter":
-      return <OrderEntry session={session} role={userRole} />
+      screen = <OrderEntry session={session} role={userRole} />
+      break
     case "KitchenStaff":
-      return <KitchenDisplay session={session} />
+      screen = <KitchenDisplay session={session} />
+      break
     case "Manager":
     case "Administrator":
-      return <ManagerDashboard session={session} />
+      screen = <ManagerDashboard session={session} />
+      break
     default:
-      return <div>Loading...</div>
+      screen = <div style={{ padding: "20px" }}>Loading...</div>
   }
+
+  return <>{themeButton}{screen}</>
 }

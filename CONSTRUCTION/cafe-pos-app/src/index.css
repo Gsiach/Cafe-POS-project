@@ -1,12 +1,32 @@
 :root {
   font-family: system-ui, -apple-system, sans-serif;
-  color-scheme: dark;
+}
+
+[data-theme="dark"] {
+  --bg: #12141a;
+  --panel-bg: #1a1c24;
+  --border: #2a2d38;
+  --text: #e8e8ea;
+  --btn-bg: #2a2d38;
+  --btn-hover: #3a3d4a;
+  --input-bg: #1c1e26;
+}
+
+[data-theme="light"] {
+  --bg: #f4f5f7;
+  --panel-bg: #ffffff;
+  --border: #d8dae0;
+  --text: #1a1c24;
+  --btn-bg: #eaebef;
+  --btn-hover: #dcdee4;
+  --input-bg: #ffffff;
 }
 
 body {
   margin: 0;
-  background: #12141a;
-  color: #e8e8ea;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
 }
 
 h2, h3 {
@@ -14,16 +34,16 @@ h2, h3 {
 }
 
 button {
-  background: #2a2d38;
-  color: #e8e8ea;
-  border: 1px solid #3a3d4a;
+  background: var(--btn-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.15s;
 }
 
 button:hover:not(:disabled) {
-  background: #3a3d4a;
+  background: var(--btn-hover);
 }
 
 button:disabled {
@@ -32,16 +52,24 @@ button:disabled {
 }
 
 input, select {
-  background: #1c1e26;
-  color: #e8e8ea;
-  border: 1px solid #3a3d4a;
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 6px 10px;
 }
 
 .panel {
-  background: #1a1c24;
-  border: 1px solid #2a2d38;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 20px;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 8px 14px;
+  z-index: 100;
 }
