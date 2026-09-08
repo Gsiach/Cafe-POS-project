@@ -123,29 +123,29 @@ export default function OrderEntry({ session, role }) {
     setSubmitting(false)
   }
 
-  if (loading) return <div>Loading menu...</div>
+  if (loading) return <div style={{ padding: "20px" }}>Loading menu...</div>
 
   return (
-    <div style={{ padding: "20px", display: "flex", gap: "40px" }}>
-      <div>
+    <div style={{ padding: "20px", display: "flex", gap: "24px" }}>
+      <div className="panel">
         <h2>Order Entry — {role}</h2>
         <h3>Menu</h3>
         {menuItems.map(item => (
           <div key={item.id} style={{ marginBottom: "8px" }}>
-            <button onClick={() => addToCart(item)} style={{ padding: "6px 12px" }}>
+            <button onClick={() => addToCart(item)} style={{ padding: "8px 14px" }}>
               + {item.name} — K{item.price} ({item.menu_item_categories?.name})
             </button>
           </div>
         ))}
       </div>
 
-      <div style={{ minWidth: "300px" }}>
+      <div className="panel" style={{ minWidth: "300px" }}>
         <h3>Cart</h3>
         {cart.length === 0 && <p>No items yet.</p>}
         {cart.map(c => (
-          <div key={c.id} style={{ marginBottom: "6px" }}>
-            {c.name} x{c.quantity} — K{(c.price * c.quantity).toFixed(2)}
-            <button onClick={() => removeFromCart(c.id)} style={{ marginLeft: "10px" }}>
+          <div key={c.id} style={{ marginBottom: "6px", display: "flex", alignItems: "center", gap: "10px" }}>
+            <span>{c.name} x{c.quantity} — K{(c.price * c.quantity).toFixed(2)}</span>
+            <button onClick={() => removeFromCart(c.id)} style={{ padding: "4px 10px" }}>
               Remove
             </button>
           </div>
