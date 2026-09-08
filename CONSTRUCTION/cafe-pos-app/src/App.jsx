@@ -43,13 +43,26 @@ export default function App() {
     setTheme(prev => (prev === "dark" ? "light" : "dark"))
   }
 
-  const themeButton = (
-    <button className="theme-toggle" onClick={toggleTheme}>
-      {theme === "dark" ? "☀ Light" : "🌙 Dark"}
-    </button>
+  async function handleLogout() {
+    await supabase.auth.signOut()
+    setSession(null)
+    setUserRole(null)
+  }
+
+  const topBar = (
+    <div style={{ position: "fixed", top: "16px", right: "16px", zIndex: 100, display: "flex", gap: "10px" }}>
+      <button onClick={toggleTheme} style={{ padding: "8px 14px" }}>
+        {theme === "dark" ? "☀ Light" : "🌙 Dark"}
+      </button>
+      {session && (
+        <button onClick={handleLogout} style={{ padding: "8px 14px" }}>
+          Logout
+        </button>
+      )}
+    </div>
   )
 
-  if (!session) return <>{themeButton}<Login /></>
+  if (!session) return <>{topBar}<Login /></>
 
   let screen
   switch (userRole) {
@@ -68,5 +81,5 @@ export default function App() {
       screen = <div style={{ padding: "20px" }}>Loading...</div>
   }
 
-  return <>{themeButton}{screen}</>
+  return <>{topBar}{screen}</>
 }
