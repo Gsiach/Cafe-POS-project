@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import { supabase } from "./lib/supabaseClient"
 import Login from "./components/Login"
 import OrderEntry from "./components/OrderEntry"
+import WaiterScreen from "./components/WaiterScreen"
 import KitchenDisplay from "./components/KitchenDisplay"
-import ActiveOrders from "./components/ActiveOrders"
 import ManagerDashboard from "./components/ManagerDashboard"
 
 export default function App() {
@@ -67,8 +67,10 @@ export default function App() {
   let screen
   switch (userRole) {
     case "Cashier":
-    case "Waiter":
       screen = <OrderEntry session={session} role={userRole} />
+      break
+    case "Waiter":
+      screen = <WaiterScreen session={session} role={userRole} />
       break
     case "KitchenStaff":
       screen = <KitchenDisplay session={session} />
